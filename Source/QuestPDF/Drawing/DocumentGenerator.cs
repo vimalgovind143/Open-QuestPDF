@@ -115,7 +115,7 @@ namespace QuestPDF.Drawing
             try
             {
                 var pageContext = new PageContext();
-                RenderPass(pageContext, new FreeDocumentCanvas(), content);
+                RenderPass(pageContext, new SemanticDocumentCanvas(), content);
                 pageContext.ProceedToNextRenderingPhase();
 
                 canvas.ConfigureWithSemanticTree(semanticTreeManager);
@@ -141,6 +141,7 @@ namespace QuestPDF.Drawing
             var useSharedPageContext = document.PageNumberStrategy == MergedDocumentPageNumberStrategy.Continuous;
 
             var semanticTreeManager = CreateSemanticTreeManager(settings);
+            var semanticDocumentCanvas = new SemanticDocumentCanvas();
             
             var documentParts = Enumerable
                 .Range(0, document.Documents.Count)
@@ -155,20 +156,21 @@ namespace QuestPDF.Drawing
             try
             {
                 foreach (var documentPart in documentParts)
-                    documentPart.PageContext.SetDocumentId(documentPart.DocumentId);
-                
-                foreach (var documentPart in documentParts)
                 {
-                    RenderPass(documentPart.PageContext, new FreeDocumentCanvas(), documentPart.Content);
-                    documentPart.PageContext.ProceedToNextRenderingPhase();
+                    documentPart.PageContext.SetDocumentId(documentPart.DocumentId);
+                    RenderPass(documentPart.PageContext, semanticDocumentCanvas, documentPart.Content);
                 }
 
+                foreach (var documentPart in documentParts)
+                    documentPart.PageContext.ProceedToNextRenderingPhase();
+                
                 canvas.ConfigureWithSemanticTree(semanticTreeManager);
                 
                 canvas.BeginDocument();
 
                 foreach (var documentPart in documentParts)
                 {
+                    documentPart.PageContext.SetDocumentId(documentPart.DocumentId);
                     RenderPass(documentPart.PageContext, canvas, documentPart.Content);
                     documentPart.Content.ReleaseDisposableChildren();
                 }
