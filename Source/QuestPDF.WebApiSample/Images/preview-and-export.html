@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestPDF Branding Images - Preview & Export</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f3f4f6;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #1e40af;
+            margin-bottom: 10px;
+        }
+        .intro {
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .image-card {
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            background: #fafafa;
+        }
+        .image-card h3 {
+            color: #1e40af;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+        .image-card .specs {
+            color: #666;
+            font-size: 12px;
+            margin-bottom: 15px;
+        }
+        .image-preview {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            background-image: 
+                linear-gradient(45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(-45deg, #f0f0f0 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #f0f0f0 75%),
+                linear-gradient(-45deg, transparent 75%, #f0f0f0 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        .image-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #1e3a8a;
+        }
+        .btn-secondary {
+            background: #6b7280;
+        }
+        .btn-secondary:hover {
+            background: #4b5563;
+        }
+        .instructions {
+            background: #eff6ff;
+            border-left: 4px solid #1e40af;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 4px;
+        }
+        .instructions h2 {
+            color: #1e40af;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        .instructions li {
+            margin-bottom: 10px;
+        }
+        .alert {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 QuestPDF Branding Images</h1>
+        <p class="intro">
+            Preview your SVG branding images below. You can view them here and export to PNG by right-clicking 
+            each image and selecting "Save image as..." or use the download buttons.
+        </p>
+
+        <div class="image-grid">
+            <!-- Company Logo -->
+            <div class="image-card">
+                <h3>📋 Company Logo (Header)</h3>
+                <p class="specs">Size: 240x120px | Usage: Top-right header</p>
+                <div class="image-preview">
+                    <img src="company-logo.svg" alt="Company Logo" id="logo">
+                </div>
+                <button class="btn" onclick="downloadImage('logo', 'company-logo.png')">💾 Download PNG</button>
+                <a href="company-logo.svg" download class="btn btn-secondary">📄 Download SVG</a>
+            </div>
+
+            <!-- Footer Logo -->
+            <div class="image-card">
+                <h3>📐 Footer Logo</h3>
+                <p class="specs">Size: 80x60px | Usage: Document footers</p>
+                <div class="image-preview">
+                    <img src="company-logo-footer.svg" alt="Footer Logo" id="footer-logo">
+                </div>
+                <button class="btn" onclick="downloadImage('footer-logo', 'company-logo-footer.png')">💾 Download PNG</button>
+                <a href="company-logo-footer.svg" download class="btn btn-secondary">📄 Download SVG</a>
+            </div>
+
+            <!-- Company Seal -->
+            <div class="image-card">
+                <h3>🏛️ Company Seal</h3>
+                <p class="specs">Size: 160x160px | Usage: Signature sections</p>
+                <div class="image-preview">
+                    <img src="company-seal.svg" alt="Company Seal" id="seal">
+                </div>
+                <button class="btn" onclick="downloadImage('seal', 'company-seal.png')">💾 Download PNG</button>
+                <a href="company-seal.svg" download class="btn btn-secondary">📄 Download SVG</a>
+            </div>
+
+            <!-- Watermark -->
+            <div class="image-card">
+                <h3>💧 Watermark</h3>
+                <p class="specs">Size: 800x800px | Usage: Page background</p>
+                <div class="image-preview">
+                    <img src="watermark.svg" alt="Watermark" id="watermark" style="max-width: 80%;">
+                </div>
+                <button class="btn" onclick="downloadImage('watermark', 'watermark.png')">💾 Download PNG</button>
+                <a href="watermark.svg" download class="btn btn-secondary">📄 Download SVG</a>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h2>📖 How to Export to PNG</h2>
+            <ol>
+                <li><strong>Method 1 - Using Download Buttons:</strong> Click the "💾 Download PNG" button below each image. This will convert and download the PNG (works in modern browsers).</li>
+                <li><strong>Method 2 - Right-Click Save:</strong> Right-click on any image above and select "Save image as..." then choose PNG format.</li>
+                <li><strong>Method 3 - Screenshot:</strong> Use your browser's screenshot tool (F12 → Ctrl+Shift+P → "Capture node screenshot" in Chrome).</li>
+                <li><strong>After Export:</strong> Save all PNG files in the <code>Images</code> folder and restart your application.</li>
+            </ol>
+        </div>
+
+        <div class="alert">
+            <strong>⚠️ Note:</strong> The "Download PNG" buttons use HTML5 Canvas to convert SVG to PNG. 
+            If it doesn't work in your browser, use Method 2 or 3 above, or use the PowerShell script 
+            or online converter mentioned in CONVERSION-GUIDE.md.
+        </div>
+    </div>
+
+    <script>
+        function downloadImage(imageId, filename) {
+            const img = document.getElementById(imageId);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            // Create a new image to load the SVG
+            const svgImage = new Image();
+            
+            svgImage.onload = function() {
+                canvas.width = svgImage.width;
+                canvas.height = svgImage.height;
+                
+                // Draw white background for images that need it
+                if (imageId !== 'watermark') {
+                    ctx.fillStyle = 'white';
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                }
+                
+                ctx.drawImage(svgImage, 0, 0);
+                
+                // Convert to PNG and download
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+                }, 'image/png');
+            };
+            
+            svgImage.onerror = function() {
+                alert('Error converting SVG to PNG. Please use an alternative method from the instructions.');
+            };
+            
+            // Load the SVG as data URL
+            svgImage.src = img.src;
+        }
+    </script>
+</body>
+</html>

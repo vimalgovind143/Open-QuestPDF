@@ -1,0 +1,32 @@
+<svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer circle -->
+  <circle cx="80" cy="80" r="75" fill="none" stroke="#1e40af" stroke-width="4"/>
+  <circle cx="80" cy="80" r="68" fill="none" stroke="#1e40af" stroke-width="2"/>
+  
+  <!-- Inner decorative star -->
+  <path d="M 80 25 L 88 52 L 115 52 L 93 68 L 101 95 L 80 79 L 59 95 L 67 68 L 45 52 L 72 52 Z" 
+        fill="#3b82f6" opacity="0.3"/>
+  
+  <!-- Company initials in center -->
+  <circle cx="80" cy="80" r="35" fill="#1e40af"/>
+  <text x="80" y="93" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">GT</text>
+  
+  <!-- Top arc text -->
+  <path id="topArc" d="M 20,80 A 60,60 0 0,1 140,80" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e40af">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+      GULF TECHNOLOGY SOLUTIONS
+    </textPath>
+  </text>
+  
+  <!-- Bottom arc text -->
+  <path id="bottomArc" d="M 140,80 A 60,60 0 0,1 20,80" fill="none"/>
+  <text font-family="Arial, sans-serif" font-size="10" fill="#1e40af">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      KINGDOM OF BAHRAIN
+    </textPath>
+  </text>
+  
+  <!-- Registration number at bottom -->
+  <text x="80" y="145" font-family="Arial, sans-serif" font-size="8" fill="#1e40af" text-anchor="middle">CR: 123456-1</text>
+</svg>

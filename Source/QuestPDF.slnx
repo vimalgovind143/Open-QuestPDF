@@ -9,6 +9,7 @@
   <Project Path="QuestPDF.ReportSample/QuestPDF.ReportSample.csproj" />
   <Project Path="QuestPDF.UnitTests/QuestPDF.UnitTests.csproj" />
   <Project Path="QuestPDF.VisualTests/QuestPDF.VisualTests.csproj" />
+  <Project Path="QuestPDF.WebApiSample/QuestPDF.WebApiSample.csproj" />
   <Project Path="QuestPDF.ZUGFeRD/QuestPDF.ZUGFeRD.csproj" />
   <Project Path="QuestPDF/QuestPDF.csproj" />
 </Solution>

@@ -134,6 +134,7 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+publish-output/
 
 # Publish Web Output
 *.[Pp]ublish.xml
@@ -224,3 +225,8 @@ _Pvt_Extensions
 # macOS
 .DS_Store
 **/.DS_Store
+
+# QuestPDF.WebApiSample specific ignores
+Source/QuestPDF.WebApiSample/wwwroot/
+Source/QuestPDF.WebApiSample/appsettings.json
+Source/QuestPDF.WebApiSample/Properties/launchSettings.json

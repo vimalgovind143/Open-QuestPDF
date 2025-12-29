@@ -9,6 +9,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
       <ProjectReference Include="..\QuestPDF.ReportSample\QuestPDF.ReportSample.csproj" />
       <ProjectReference Include="..\QuestPDF\QuestPDF.csproj" />
     </ItemGroup>

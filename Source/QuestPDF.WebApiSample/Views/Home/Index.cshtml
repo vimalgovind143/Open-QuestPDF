@@ -1,0 +1,161 @@
+@{ViewData["Title"] = "Home Page";Layout = "_Layout";}
+
+<div class="container">
+    <div class="hero fade-in mb-4">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-lg-start text-center">
+                <div class="hero-kicker mb-2">Realtime PDF experiences</div>
+                <h1 class="hero-title mb-3">Design, generate, and ship reports with QuestPDF.</h1>
+                <p class="text-muted mb-4">Compose beautiful PDFs without leaving ASP.NET Core. Preview, iterate, and download instantly.</p>
+                <div class="d-flex flex-wrap gap-2 hero-actions mb-3 justify-content-lg-start justify-content-center">
+                    <a href="/Home/ReportGenerator" class="btn btn-primary">
+                        <i class="bi bi-magic me-2"></i>Start generating
+                    </a>
+                    <a href="/api/swagger" class="btn btn-outline-light">
+                        <i class="bi bi-box-arrow-up-right me-2"></i>API explorer
+                    </a>
+                </div>
+                <div class="d-flex flex-wrap gap-2 justify-content-lg-start justify-content-center">
+                    <span class="stat-chip"><i class="bi bi-lightning-charge-fill text-warning"></i>Realtime PDFs</span>
+                    <span class="stat-chip"><i class="bi bi-layout-text-sidebar"></i>11+ templates</span>
+                    <span class="stat-chip"><i class="bi bi-shield-check"></i>Export ready</span>
+                </div>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="glass-panel p-4 h-100">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div>
+                            <div class="text-muted small">Next export</div>
+                            <div class="fw-bold">Employee performance digest</div>
+                        </div>
+                        <span class="badge bg-success">Online</span>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="glass-card">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="text-primary me-2"><i class="bi bi-file-earmark-pdf"></i></span>
+                                    <span class="small text-muted">Latest</span>
+                                </div>
+                                <div class="fw-bold">Tax invoice</div>
+                                <div class="text-muted small">A4 • multi-page • VAT</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="glass-card">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="text-info me-2"><i class="bi bi-bar-chart-line"></i></span>
+                                    <span class="small text-muted">Analytics</span>
+                                </div>
+                                <div class="fw-bold">Dynamic columns</div>
+                                <div class="text-muted small">Auto-fit layouts</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="glass-card">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="text-success me-2"><i class="bi bi-people"></i></span>
+                                    <span class="small text-muted">HR</span>
+                                </div>
+                                <div class="fw-bold">Employee report</div>
+                                <div class="text-muted small">Performance + payroll</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="glass-card">
+                                <div class="d-flex align-items-center mb-1">
+                                    <span class="text-warning me-2"><i class="bi bi-wallet2"></i></span>
+                                    <span class="small text-muted">Finance</span>
+                                </div>
+                                <div class="fw-bold">Budget analysis</div>
+                                <div class="text-muted small">Variance dashboards</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-3 mb-4">
+        <div class="col-lg-4">
+            <div class="glass-card h-100">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-layout-text-sidebar text-primary me-2"></i>
+                    <h5 class="mb-0">Template-forward</h5>
+                </div>
+                <p class="text-muted mb-0">Curated layouts for invoices, receipts, ledgers, catalogs, and HR packs—ready to export.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="glass-card h-100">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-cpu text-accent me-2"></i>
+                    <h5 class="mb-0">Optimized pipeline</h5>
+                </div>
+                <p class="text-muted mb-0">QuestPDF runs in-process with caching-friendly assets so downloads stay instant.</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="glass-card h-100">
+                <div class="d-flex align-items-center mb-2">
+                    <i class="bi bi-activity text-success me-2"></i>
+                    <h5 class="mb-0">Observability</h5>
+                </div>
+                <p class="text-muted mb-0">Preview locally, trace API calls, and iterate on document composition without redeploys.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="glass-panel p-4 mb-4 fade-in">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+            <div>
+                <div class="hero-kicker">Report library</div>
+                <h3 class="section-title mb-0">Pick a template and download instantly</h3>
+            </div>
+            <div class="d-flex gap-2">
+                <span class="tag-chip">A4 & A5</span>
+                <span class="tag-chip">Brandable</span>
+                <span class="tag-chip">Multi-page</span>
+            </div>
+        </div>
+        <div class="row g-3 report-grid">
+            <div class="col-md-3 col-sm-6">
+                <a href="/Home/ReportGenerator" class="report-link">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-receipt-cutoff text-primary me-2"></i>
+                        <span class="fw-semibold">Tax invoice</span>
+                    </div>
+                    <div class="category-label">VAT ready • multi-page</div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/Home/ReportGenerator" class="report-link">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-cash-coin text-success me-2"></i>
+                        <span class="fw-semibold">Receipt</span>
+                    </div>
+                    <div class="category-label">Compact confirmations</div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/Home/ReportGenerator" class="report-link">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-people text-info me-2"></i>
+                        <span class="fw-semibold">Employee report</span>
+                    </div>
+                    <div class="category-label">Performance + attendance</div>
+                </a>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <a href="/Home/ReportGenerator" class="report-link">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-bar-chart text-warning me-2"></i>
+                        <span class="fw-semibold">Dynamic columns</span>
+                    </div>
+                    <div class="category-label">Analytics-ready tables</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

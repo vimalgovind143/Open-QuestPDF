@@ -1,0 +1,12 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Very light watermark design -->
+  <g opacity="0.1">
+    <!-- Large company initials -->
+    <circle cx="400" cy="400" r="200" fill="none" stroke="#1e40af" stroke-width="8"/>
+    <text x="400" y="460" font-family="Arial, sans-serif" font-size="200" font-weight="bold" fill="#1e40af" text-anchor="middle">GT</text>
+    
+    <!-- Company name -->
+    <text x="400" y="580" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#1e40af" text-anchor="middle">GULF TECHNOLOGY</text>
+    <text x="400" y="620" font-family="Arial, sans-serif" font-size="32" fill="#1e40af" text-anchor="middle">SOLUTIONS</text>
+  </g>
+</svg>
