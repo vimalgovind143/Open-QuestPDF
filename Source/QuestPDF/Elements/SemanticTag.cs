@@ -20,7 +20,7 @@ internal class SemanticTag : ContainerElement, ISemanticAware
     internal override void Draw(Size availableSpace)
     {
         var shouldIgnoreSemanticMeaning =
-            Canvas.IsDiscardDrawingCanvas() ||
+            Canvas.Is<DiscardDrawingCanvas>() ||
             SemanticTreeManager == null ||
             SemanticTreeManager.IsCurrentContentArtifact();
         
@@ -32,8 +32,9 @@ internal class SemanticTag : ContainerElement, ISemanticAware
         
         RegisterCurrentSemanticNode();
         
+        using var semanticScope = Canvas.StartSemanticScopeWithNodeId(SemanticTreeNode.NodeId);
+        
         SemanticTreeManager.PushOnStack(SemanticTreeNode);
-        Canvas.SetSemanticNodeId(SemanticTreeNode.NodeId);
         Child?.Draw(availableSpace);
         SemanticTreeManager.PopStack();
     }
